@@ -58,9 +58,6 @@ if(isset($_POST['submit'])){
 
 
 
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -90,11 +87,6 @@ if(isset($_POST['submit'])){
 	}
 
 ?>
-
-
-
-
-
 	<a href="logout.php" class="btn btn-success"><i class="fa fa-lock"></i> Logout</a>
 	<button class="btn btn-success" type="button" data-toggle="modal" data-target="#myModal">
   <i class="fa fa-plus"></i> Add New Student
@@ -128,7 +120,6 @@ if(isset($_POST['submit'])){
 				$u_phone = $row['u_phone'];
 				$u_family = $row['u_family'];
 				$u_staff_id = $row['staff_id'];
-
         		$image = $row['image'];
 
         		echo "
@@ -158,7 +149,7 @@ if(isset($_POST['submit'])){
 				<td class='text-center'>
 					<span>
 					
-						<a href='#' class='btn btn-danger delet euser' title='Delete'>
+						<a href='#' class='btn btn-danger delete user' title='Delete'>
 						     <i class='fa fa-trash-o fa-lg' data-toggle='modal' data-target='#$id' style='' aria-hidden='true'></i>
 						</a>
 					</span>
@@ -358,13 +349,8 @@ while($row = mysqli_fetch_array($run_data))
 	$Bday = $row['u_birthday'];
 	$family = $row['u_family'];
 	$phone = $row['u_phone'];
-
-
-
 	$pincode = $row['u_pincode'];
-
 	$time = $row['uploaded'];
-	
 	$image = $row['image'];
 	echo "
 
