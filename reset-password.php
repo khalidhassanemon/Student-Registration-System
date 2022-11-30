@@ -86,12 +86,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <!-- navigation menu start  -->
 <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="#" style="font-size:36px;">
-    <img src="images/coding-cush-logo.png" width="50" height="50" class="d-inline-block align-top" alt="">
-    Coding Cush
+    <img src="https://www.bubt.edu.bd/assets/backend/img/bubt_logo_small2.png" width="50" height="50" class="d-inline-block align-top" alt="">
+    Reset Password
   </a>
 
   <form class="form-inline my-2 my-lg-0">
-      <img src="images/user.png" style="width:50px; height: 50px; margin-right:10px" alt="user-avtar">
+      <img src="https://www.bubt.edu.bd/assets/backend/img/bubt_logo_small2.png" style="width:50px; height: 50px; margin-right:10px" alt="user-avtar">
   <a href="logout.php" class="btn btn-primary"><i class="fa fa-lock-open"></i> Logout</a>
     </form>
 </nav>

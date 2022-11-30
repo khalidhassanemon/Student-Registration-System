@@ -20,18 +20,12 @@ if(isset($_POST['submit'])){
 	$u_f_name = $_POST['user_first_name'];
 	$u_l_name = $_POST['user_last_name'];
 	$u_father = $_POST['user_father'];
-	$u_aadhar = $_POST['user_aadhar'];
 	$u_birthday = $_POST['user_dob'];
 	$u_gender = $_POST['user_gender'];
 	$u_email = $_POST['user_email'];
 	$u_phone = $_POST['user_phone'];
-	$u_state = $_POST['state'];
-	$u_dist = $_POST['dist'];
-	$u_village = $_POST['village'];
-	$u_police = $_POST['police_station'];
 	$u_pincode = $_POST['pincode'];
 	$u_mother = $_POST['user_mother'];
-	$u_family = $_POST['family'];
 	$u_staff_id = $_POST['staff_id'];
 	
 
@@ -48,7 +42,7 @@ if(isset($_POST['submit'])){
   		$msg = "Failed to upload image";
   	}
 
-  	$insert_data = "INSERT INTO student_data(u_card, u_f_name, u_l_name, u_father, u_aadhar, u_birthday, u_gender, u_email, u_phone, u_state, u_dist, u_village, u_police, u_pincode, u_mother, u_family, staff_id,image,uploaded) VALUES ('$u_card','$u_f_name','$u_l_name','$u_father','$u_aadhar','$u_birthday','$u_gender','$u_email','$u_phone','$u_state','$u_dist','$u_village','$u_police','$u_pincode','$u_mother','$u_family','$u_staff_id','$image',NOW())";
+  	$insert_data = "INSERT INTO student_data(u_card, u_f_name, u_l_name, u_father, u_birthday, u_gender, u_email, u_phone,u_pincode, u_mother, staff_id,image,uploaded) VALUES ('$u_card','$u_f_name','$u_l_name','$u_father','$u_birthday','$u_gender','$u_email','$u_phone','$u_pincode','$u_mother','$u_staff_id','$image',NOW())";
   	$run_data = mysqli_query($con,$insert_data);
 
   	if($run_data){
@@ -70,7 +64,7 @@ if(isset($_POST['submit'])){
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Student Crud Operation</title>
+	<title>Student Registration Panel</title>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -83,7 +77,7 @@ if(isset($_POST['submit'])){
 <body>
 
 	<div class="container">
-<a href="https://lexacademy.in" target="_blank"><img src="https://codingcush.com/uploads/logo/logo_61b79976c34f5.png" alt="" width="350px" ></a><br><hr>
+<a href="https://lexacademy.in" target="_blank"><img src="https://www.bubt.edu.bd/assets/frontend/images/bubt_logo.png" alt="" width="350px" ></a><br><hr>
 
 <!-- adding alert notification  -->
 <?php
@@ -105,7 +99,6 @@ if(isset($_POST['submit'])){
 	<button class="btn btn-success" type="button" data-toggle="modal" data-target="#myModal">
   <i class="fa fa-plus"></i> Add New Student
   </button>
-  <a href="export.php" class="btn btn-success pull-right"><i class="fa fa-download"></i> Export Data</a>
   <hr>
 		<table class="table table-bordered table-striped table-hover" id="myTable">
 		<thead>
@@ -149,13 +142,13 @@ if(isset($_POST['submit'])){
 			
 				<td class='text-center'>
 					<span>
-					<a href='#' class='btn btn-success mr-3 profile' data-toggle='modal' data-target='#view$id' title='Prfile'><i class='fa fa-address-card-o' aria-hidden='true'></i></a>
+					<a href='#' class='btn btn-success mr-3 profile' data-toggle='modal' data-target='#view$id' title='Profile'><i class='fa fa-address-card-o' aria-hidden='true'></i></a>
 					</span>
 					
 				</td>
 				<td class='text-center'>
 					<span>
-					<a href='#' class='btn btn-warning mr-3 edituser' data-toggle='modal' data-target='#edit$id' title='Edit'><i class='fa fa-pencil-square-o fa-lg'></i></a>
+					<a href='#' class='btn btn-warning mr-3 edit user' data-toggle='modal' data-target='#edit$id' title='Edit'><i class='fa fa-pencil-square-o fa-lg'></i></a>
 
 					     
 					    
@@ -165,7 +158,7 @@ if(isset($_POST['submit'])){
 				<td class='text-center'>
 					<span>
 					
-						<a href='#' class='btn btn-danger deleteuser' title='Delete'>
+						<a href='#' class='btn btn-danger delet euser' title='Delete'>
 						     <i class='fa fa-trash-o fa-lg' data-toggle='modal' data-target='#$id' style='' aria-hidden='true'></i>
 						</a>
 					</span>
@@ -198,7 +191,7 @@ if(isset($_POST['submit'])){
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-		<center><img src="https://codingcush.com/uploads/logo/logo_61b79976c34f5.png" width="300px" height="80px" alt=""></center>
+		<center><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC6dulSClyxUcg2S2GGVdNH9ttQg-w3QcYIQ&usqp=CAU" width="300px" height="80px" alt=""></center>
     
       </div>
       <div class="modal-body">
@@ -220,11 +213,11 @@ if(isset($_POST['submit'])){
 
 <div class="form-row">
 <div class="form-group col-md-6">
-<label for="firstname">First Name</label>
+<label for="first name">First Name</label>
 <input type="text" class="form-control" name="user_first_name" placeholder="Enter First Name">
 </div>
 <div class="form-group col-md-6">
-<label for="lastname">Last Name</label>
+<label for="last name">Last Name</label>
 <input type="text" class="form-control" name="user_last_name" placeholder="Enter Last Name">
 </div>
 </div>
@@ -232,11 +225,11 @@ if(isset($_POST['submit'])){
 
 <div class="form-row">
 <div class="form-group col-md-6">
-<label for="fathername">Father's Name</label>
+<label for="father name">Father's Name</label>
 <input type="text" class="form-control" name="user_father" placeholder="Enter First Name">
 </div>
 <div class="form-group col-md-6">
-<label for="mothername">Mother's Name</label>
+<label for="mother name">Mother's Name</label>
 <input type="text" class="form-control" name="user_mother" placeholder="Enter Last Name">
 </div>
 </div>
@@ -246,10 +239,6 @@ if(isset($_POST['submit'])){
 <div class="form-group col-md-6">
 <label for="email">Email Id</label>
 <input type="email" class="form-control" name="user_email" placeholder="Enter Email id">
-</div>
-<div class="form-group col-md-6">
-<label for="aadharno">Aadhar No.</label>
-<input type="text" class="form-control" name="user_aadhar" maxlength="12" placeholder="Enter 12-digit Aadhar no. ">
 </div>
 </div>
 
@@ -270,68 +259,8 @@ if(isset($_POST['submit'])){
 </div>
 
 
-<div class="form-group">
-<label for="family">Family Member's</label>
-    <textarea class="form-control" name="family" rows="3"></textarea>
-</div>
-
-
-
-<div class="form-group">
-<label for="inputAddress">Village</label>
-<input type="text" class="form-control" name="village" placeholder="1234 Main St">
-</div>
-<div class="form-group">
-<label for="inputAddress2">Police Station</label>
-<input type="text" class="form-control" name="police_station" placeholder="Enter police station">
-</div>
 <div class="form-row">
-<div class="form-group col-md-6">
-<label for="inputCity">District</label>
-<input type="text" class="form-control" name="dist">
-</div>
-<div class="form-group col-md-4">
-<label for="inputState">State</label>
-<select name="state" class="form-control">
-  <option selected>Choose...</option>
-  <option value="Andhra Pradesh">Andhra Pradesh</option>
-									<option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
-									<option value="Arunachal Pradesh">Arunachal Pradesh</option>
-									<option value="Assam">Assam</option>
-									<option value="Bihar">Bihar</option>
-									<option value="Chandigarh">Chandigarh</option>
-									<option value="Chhattisgarh">Chhattisgarh</option>
-									<option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
-									<option value="Daman and Diu">Daman and Diu</option>
-									<option value="Delhi">Delhi</option>
-									<option value="Lakshadweep">Lakshadweep</option>
-									<option value="Puducherry">Puducherry</option>
-									<option value="Goa">Goa</option>
-									<option value="Gujarat">Gujarat</option>
-									<option value="Haryana">Haryana</option>
-									<option value="Himachal Pradesh">Himachal Pradesh</option>
-									<option value="Jammu and Kashmir">Jammu and Kashmir</option>
-									<option value="Jharkhand">Jharkhand</option>
-									<option value="Karnataka">Karnataka</option>
-									<option value="Kerala">Kerala</option>
-									<option value="Madhya Pradesh">Madhya Pradesh</option>
-									<option value="Maharashtra">Maharashtra</option>
-									<option value="Manipur">Manipur</option>
-									<option value="Meghalaya">Meghalaya</option>
-									<option value="Mizoram">Mizoram</option>
-									<option value="Nagaland">Nagaland</option>
-									<option value="Odisha">Odisha</option>
-									<option value="Punjab">Punjab</option>
-									<option value="Rajasthan">Rajasthan</option>
-									<option value="Sikkim">Sikkim</option>
-									<option value="Tamil Nadu">Tamil Nadu</option>
-									<option value="Telangana">Telangana</option>
-									<option value="Tripura">Tripura</option>
-									<option value="Uttar Pradesh">Uttar Pradesh</option>
-									<option value="Uttarakhand">Uttarakhand</option>
-									<option value="West Bengal">West Bengal</option>
-</select>
-</div>
+
 <div class="form-group col-md-2">
 <label for="inputZip">Zip</label>
 <input type="text" class="form-control" name="pincode">
@@ -426,16 +355,14 @@ while($row = mysqli_fetch_array($run_data))
 	$mother = $row['u_mother'];
 	$gender = $row['u_gender'];
 	$email = $row['u_email'];
-	$aadhar = $row['u_aadhar'];
 	$Bday = $row['u_birthday'];
 	$family = $row['u_family'];
 	$phone = $row['u_phone'];
-	$address = $row['u_state'];
-	$village = $row['u_village'];
-	$police = $row['u_police'];
-	$dist = $row['u_dist'];
+
+
+
 	$pincode = $row['u_pincode'];
-	$state = $row['u_state'];
+
 	$time = $row['uploaded'];
 	
 	$image = $row['image'];
@@ -465,19 +392,19 @@ while($row = mysqli_fetch_array($run_data))
 						<p class='text-secondary'>
 						<strong>S/O :</strong> $father <br>
 						<strong>M/O :</strong>$mother <br>
-						<strong>Aadhar :</strong> $aadhar <br>
 						<i class='fa fa-venus-mars' aria-hidden='true'></i> $gender
 						<br />
 						<i class='fa fa-envelope-o' aria-hidden='true'></i> $email
 						<br />
 						<div class='card' style='width: 18rem;'>
-						<i class='fa fa-users' aria-hidden='true'></i> Familiy :
+						<i class='fa fa-users' aria-hidden='true'></i> Family :
 								<div class='card-body'>
 								<p> $family </p>
 								</div>
 						</div>
 						
-						<i class='fa fa-home' aria-hidden='true'> Address : </i> $village, $police, <br> $dist, $state - $pincode
+						<i class='fa fa-home' aria-hidden='true'> Address : </i>
+						   $pincode
 						<br />
 						</p>
 						<!-- Split button -->
@@ -525,16 +452,9 @@ while($row = mysqli_fetch_array($run_data))
 	$mother = $row['u_mother'];
 	$gender = $row['u_gender'];
 	$email = $row['u_email'];
-	$aadhar = $row['u_aadhar'];
 	$Bday = $row['u_birthday'];
-	$family = $row['u_family'];
 	$phone = $row['u_phone'];
-	$address = $row['u_state'];
-	$village = $row['u_village'];
-	$police = $row['u_police'];
-	$dist = $row['u_dist'];
 	$pincode = $row['u_pincode'];
-	$state = $row['u_state'];
 	$staffCard = $row['staff_id'];
 	$time = $row['uploaded'];
 	$image = $row['image'];
@@ -571,7 +491,7 @@ while($row = mysqli_fetch_array($run_data))
 		<input type='text' class='form-control' name='user_first_name' placeholder='Enter First Name' value='$name'>
 		</div>
 		<div class='form-group col-md-6'>
-		<label for='lastname'>Last Name</label>
+		<label for='last name'>Last Name</label>
 		<input type='text' class='form-control' name='user_last_name' placeholder='Enter Last Name' value='$name2'>
 		</div>
 		</div>
@@ -579,11 +499,11 @@ while($row = mysqli_fetch_array($run_data))
 		
 		<div class='form-row'>
 		<div class='form-group col-md-6'>
-		<label for='fathername'>Father's Name</label>
+		<label for='father name'>Father's Name</label>
 		<input type='text' class='form-control' name='user_father' placeholder='Enter First Name' value='$father'>
 		</div>
 		<div class='form-group col-md-6'>
-		<label for='mothername'>Mother's Name</label>
+		<label for='mother name'>Mother's Name</label>
 		<input type='text' class='form-control' name='user_mother' placeholder='Enter Last Name' value='$mother'>
 		</div>
 		</div>
@@ -594,10 +514,7 @@ while($row = mysqli_fetch_array($run_data))
 		<label for='email'>Email Id</label>
 		<input type='email' class='form-control' name='user_email' placeholder='Enter Email id' value='$email'>
 		</div>
-		<div class='form-group col-md-6'>
-		<label for='aadharno'>Aadhar No.</label>
-		<input type='text' class='form-control' name='user_aadhar' maxlength='12' placeholder='Enter 12-digit Aadhar no. ' value='$aadhar'>
-		</div>
+	
 		</div>
 		
 		<div class='form-row'>
@@ -616,69 +533,7 @@ while($row = mysqli_fetch_array($run_data))
 		</div>
 		</div>
 		
-		
-		<div class='form-group'>
-		<label for='family'>Family Member's</label>
-			<textarea class='form-control' name='family' rows='3'>$family</textarea>
-		</div>
-		
-		
-		
-		<div class='form-group'>
-		<label for='inputAddress'>Village</label>
-		<input type='text' class='form-control' name='village' placeholder='1234 Main St' value='$village'>
-		</div>
-		<div class='form-group'>
-		<label for='inputAddress2'>Police Station</label>
-		<input type='text' class='form-control' name='police_station' placeholder='Enter police station' value='$police'>
-		</div>
-		<div class='form-row'>
-		<div class='form-group col-md-6'>
-		<label for='inputCity'>District</label>
-		<input type='text' class='form-control' name='dist' value='$dist'>
-		</div>
-		<div class='form-group col-md-4'>
-		<label for='inputState'>State</label>
-		<select name='state' class='form-control'>
-		  <option>$state</option>
-		  <option value='Andhra Pradesh'>Andhra Pradesh</option>
-											<option value='Andaman and Nicobar Islands'>Andaman and Nicobar Islands</option>
-											<option value='Arunachal Pradesh'>Arunachal Pradesh</option>
-											<option value='Assam'>Assam</option>
-											<option value='Bihar'>Bihar</option>
-											<option value='Chandigarh'>Chandigarh</option>
-											<option value='Chhattisgarh'>Chhattisgarh</option>
-											<option value='Dadar and Nagar Haveli'>Dadar and Nagar Haveli</option>
-											<option value='Daman and Diu'>Daman and Diu</option>
-											<option value='Delhi'>Delhi</option>
-											<option value='Lakshadweep'>Lakshadweep</option>
-											<option value='Puducherry'>Puducherry</option>
-											<option value='Goa'>Goa</option>
-											<option value='Gujarat'>Gujarat</option>
-											<option value='Haryana'>Haryana</option>
-											<option value='Himachal Pradesh'>Himachal Pradesh</option>
-											<option value='Jammu and Kashmir'>Jammu and Kashmir</option>
-											<option value='Jharkhand'>Jharkhand</option>
-											<option value='Karnataka'>Karnataka</option>
-											<option value='Kerala'>Kerala</option>
-											<option value='Madhya Pradesh'>Madhya Pradesh</option>
-											<option value='Maharashtra'>Maharashtra</option>
-											<option value='Manipur'>Manipur</option>
-											<option value='Meghalaya'>Meghalaya</option>
-											<option value='Mizoram'>Mizoram</option>
-											<option value='Nagaland'>Nagaland</option>
-											<option value='Odisha'>Odisha</option>
-											<option value='Punjab'>Punjab</option>
-											<option value='Rajasthan'>Rajasthan</option>
-											<option value='Sikkim'>Sikkim</option>
-											<option value='Tamil Nadu'>Tamil Nadu</option>
-											<option value='Telangana'>Telangana</option>
-											<option value='Tripura'>Tripura</option>
-											<option value='Uttar Pradesh'>Uttar Pradesh</option>
-											<option value='Uttarakhand'>Uttarakhand</option>
-											<option value='West Bengal'>West Bengal</option>
-		</select>
-		</div>
+	
 		<div class='form-group col-md-2'>
 		<label for='inputZip'>Zip</label>
 		<input type='text' class='form-control' name='pincode' value='$pincode'>
