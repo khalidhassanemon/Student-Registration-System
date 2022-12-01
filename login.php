@@ -113,20 +113,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="https://www.bubt.edu.bd/">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="https://www.bubt.edu.bd/Home/page_details/Registration">Link</a>
+        <a class="nav-link" href="https://www.bubt.edu.bd/">About Us</a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="https://bubt.edu.bd/admission">Admission</a>
-          <a class="dropdown-item" href="http://103.15.140.180:8001/">Library</a>
-        </div>
-     </li>
+ 
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <a href="register.php"class="btn btn-success my-2 my-sm-0" type="submit">Create Account</a>
@@ -152,8 +144,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <span class="help-block"><?php echo $password_err; ?></span>
             </div>
             
- <button type="submit" class="btn btn-warning"><i class="fa fa-lock">&nbsp;</i> Login</button> &nbsp; &nbsp; 
-  <button type="reset" class="btn btn-danger "><i class="fa fa-repeat">&nbsp;</i> Reset</button>
+<div class="d-flex justify-content-center">
+<button type="submit" class="btn btn-warning"><i class="fa fa-lock">&nbsp;</i> Login</button>
+</div>
         
          
         </form>

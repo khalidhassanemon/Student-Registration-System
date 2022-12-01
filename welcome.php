@@ -31,13 +31,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <!-- Navigation menu -->
 <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="#" style="font-size:36px;">
-    <img src="https://codingcush.com/uploads/logo/logo_61b79976c34f5.png" width="200"  class="d-inline-block align-top" alt="">
-    Coding Cush
+    <img src="https://www.bubt.edu.bd/assets/frontend/images/bubt_logo.png" width="200"  class="d-inline-block align-top" alt="">
+    Digital Information Card
   </a>
 
   <form class="form-inline my-2 my-lg-0">
       <img src="images/user.png" style="width:50px; height: 50px; margin-right:10px" alt="user-avtar">
-  <a href="logout.php" class="btn btn-primary"><i class="fa fa-lock-open"></i> Logout</a>
+  <a href="https://www.bubt.edu.bd/assets/frontend/images/bubt_logo.png" class="btn btn-primary"><i class="fa fa-lock-open"></i> Logout</a>
     </form>
 </nav>
     <p>
